@@ -11,7 +11,11 @@ def encrypt(message):
     return m.upper()
 
 def decrypt(message):
-    return message
+    m = ''
+    for c in message:
+        c_index = alphabet.index(c)
+        m += alphabet[c_index-rot]
+    return m.upper()
 
 def rot3():
     command = sys.argv[1].lower()
