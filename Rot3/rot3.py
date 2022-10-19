@@ -8,7 +8,7 @@ def encrypt(message):
     for c in message:
         c_index = alphabet.index(c)
         m += alphabet[c_index+rot]
-    return m
+    return m.upper()
 
 def decrypt(message):
     return message
