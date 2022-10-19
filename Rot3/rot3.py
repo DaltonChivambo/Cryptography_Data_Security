@@ -1,8 +1,14 @@
 import sys
 
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+rot = 3
 
 def encrypt(message):
-    return message
+    m = ''
+    for c in message:
+        c_index = alphabet.index(c)
+        m += alphabet[c_index+rot]
+    return m
 
 def decrypt(message):
     return message
@@ -16,7 +22,7 @@ def rot3():
     elif command == 'decrypt':
         print(decrypt(message))
     else:
-        print(command + '-> command not found')
+        print(command + ' -> command not found')
 
 
 if __name__ == '__main__':
