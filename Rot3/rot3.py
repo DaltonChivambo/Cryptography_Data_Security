@@ -7,14 +7,14 @@ def encrypt(message):
     m = ''
     for c in message:
         c_index = alphabet.index(c)
-        m += alphabet[c_index+rot]
+        m += alphabet[(c_index+rot) % len(alphabet)]
     return m.upper()
 
 def decrypt(message):
     m = ''
     for c in message:
         c_index = alphabet.index(c)
-        m += alphabet[c_index-rot]
+        m += alphabet[(c_index-rot) % len(alphabet)]
     return m.upper()
 
 def rot3():
