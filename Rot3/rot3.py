@@ -6,15 +6,21 @@ rot = 3
 def encrypt(message):
     m = ''
     for c in message:
-        c_index = alphabet.index(c)
-        m += alphabet[(c_index+rot) % len(alphabet)]
+        if c in alphabet:
+            c_index = alphabet.index(c)
+            m += alphabet[(c_index+rot) % len(alphabet)]
+        else:
+            m += c
     return m.upper()
 
 def decrypt(message):
     m = ''
     for c in message:
-        c_index = alphabet.index(c)
-        m += alphabet[(c_index-rot) % len(alphabet)]
+        if c in alphabet:
+            c_index = alphabet.index(c)
+            m += alphabet[(c_index-rot) % len(alphabet)]
+        else:
+            m += c;
     return m.upper()
 
 def rot3():
