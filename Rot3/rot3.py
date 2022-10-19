@@ -3,27 +3,22 @@ import sys
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 rot = 3
 
-def encrypt(message):
+def cipher(message, dir):
     m = ''
     for c in message:
         if c in alphabet:
             c_index = alphabet.index(c)
-            m += alphabet[(c_index+rot) % len(alphabet)]
+            m += alphabet[(c_index + (dir * rot)) % len(alphabet)]
         else:
             m += c
     return m.upper()
 
+def encrypt(message):
+    return cipher(message, 1)
 def decrypt(message):
-    m = ''
-    for c in message:
-        if c in alphabet:
-            c_index = alphabet.index(c)
-            m += alphabet[(c_index-rot) % len(alphabet)]
-        else:
-            m += c;
-    return m.upper()
+    return cipher(message, -1)
 
-def rot3():
+def main():
     command = sys.argv[1].lower()
     message = sys.argv[2].lower()
 
@@ -36,4 +31,4 @@ def rot3():
 
 
 if __name__ == '__main__':
-    rot3()
+    main()
