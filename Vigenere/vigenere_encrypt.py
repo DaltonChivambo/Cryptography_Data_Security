@@ -20,8 +20,8 @@ def conversion(plain_text, key):
             alpha_text = ord(c) - ord('a')
 
             # implementing algo logic here
-            encrypt_num = (alpha_text + alpha_key) % 26     # to get alphabet encrypted
-            convert_unicode = encrypt_num + ord('a')    # to convert for unicode
+            encrypt_num = (alpha_text + alpha_key) % 26  # to get alphabet encrypted
+            convert_unicode = encrypt_num + ord('a')  # to convert for unicode
             convert_to_string = chr(convert_unicode)
             encrypt = convert_to_string
 
