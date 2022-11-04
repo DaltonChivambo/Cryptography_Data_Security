@@ -1,6 +1,7 @@
+import string
 import sys
 
-ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+ALPHABET = string.ascii_lowercase
 ROT = 3
 
 
